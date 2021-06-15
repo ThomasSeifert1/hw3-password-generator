@@ -40,15 +40,29 @@ function generatePassword(){
     
     console.log(upCase);
 
+    if(upCase === true){
+      passwordResult += uppercase
+    };
+
     var nums = confirm("Would you like to use Numbers?");
 
     console.log(nums);
+
+    if(nums === true){
+      passwordResult += numbers
+    };
 
     var specChars = confirm("Would you like to use Special Characters?");
 
     console.log(specChars);
 
+    if(specChars === true){
+      passwordResult += specialCharacters
+    };
+
     //intial booleans created to start building possible selections for the password 6/14/21
+
+    //finished booleans and concatenated themm to passwordResult if i did it correctly which will give you one of the strings if selected and next will be setting if nothing is picked and the random generation
 
 
 
