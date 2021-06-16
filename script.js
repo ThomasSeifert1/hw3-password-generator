@@ -30,10 +30,15 @@ function generatePassword(){
     //creating booleans for selected types of characters, which are also boxes on the screen to select your choice
     var lwrcase = confirm("Would you like to use lower case letters?");
 
+
+    // have to change password result var to get it to follow the function that i want it to do
+
+    var passwordOptions = "";
+
     console.log(lwrcase);
 
     if (lwrcase === true) {
-      passwordResult += lowercase;
+      passwordOptions += lowercase;
     };
 
     var upCase = confirm("Would you like to use upper case letters?");
@@ -41,7 +46,7 @@ function generatePassword(){
     console.log(upCase);
 
     if (upCase === true){
-      passwordResult += uppercase
+      passwordOptions += uppercase
     };
 
     var nums = confirm("Would you like to use Numbers?");
@@ -49,7 +54,7 @@ function generatePassword(){
     console.log(nums);
 
     if (nums === true){
-      passwordResult += numbers
+      passwordOptions += numbers
     };
 
     var specChars = confirm("Would you like to use Special Characters?");
@@ -57,17 +62,19 @@ function generatePassword(){
     console.log(specChars);
 
     if (specChars === true){
-      passwordResult += specialCharacters
+      passwordOptions += specialCharacters
     };
 
     //intial booleans created to start building possible selections for the password 6/14/21
 
     //finished booleans and concatenated themm to passwordResult if i did it correctly which will give you one of the strings if selected and next will be setting if nothing is picked and the random generation
 
-    //alert to say you didnt select any characters or values for your password
-    if (passwordResult.length === 0){
+    //alert to say you didnt select any characters or values for your password(had to change to passwordOptions to link it to the loop to get the propper result)
+
+    if (passwordOptions.length === 0){
       alert("Please select one type of character to generate your password. Refresh the page to try again.")
     }
+   
 
     //use a for loop to ittirate through the different arrays to generate you password
 
@@ -75,7 +82,7 @@ function generatePassword(){
     //found online: identifier syntax 
     
     for (var i = 0; i < passwordLength; i++){
-      var passwordGenerated = passwordResult.charAt(Math.floor(Math.random() * Math.floor(passwordResult.length-1)));
+      var passwordGenerated = passwordOptions.charAt(Math.floor(Math.random() * Math.floor(passwordOptions.length)));
 
     // get the loop to generate
       passwordResult += passwordGenerated;
@@ -84,6 +91,8 @@ function generatePassword(){
     return passwordResult;
 
     //generating password but not to correct length there's a issue im overseeing 
+    //corrected when i stopped selecting the var password result in the for loop because it was taking the wrong values
+    // previos result was pulling all the arrays to the text option instead of random options (fixed)
 
 
 
