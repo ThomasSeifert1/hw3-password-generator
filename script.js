@@ -40,7 +40,7 @@ function generatePassword(){
     
     console.log(upCase);
 
-    if(upCase === true){
+    if (upCase === true){
       passwordResult += uppercase
     };
 
@@ -48,7 +48,7 @@ function generatePassword(){
 
     console.log(nums);
 
-    if(nums === true){
+    if (nums === true){
       passwordResult += numbers
     };
 
@@ -56,7 +56,7 @@ function generatePassword(){
 
     console.log(specChars);
 
-    if(specChars === true){
+    if (specChars === true){
       passwordResult += specialCharacters
     };
 
@@ -65,11 +65,25 @@ function generatePassword(){
     //finished booleans and concatenated themm to passwordResult if i did it correctly which will give you one of the strings if selected and next will be setting if nothing is picked and the random generation
 
     //alert to say you didnt select any characters or values for your password
-    if(passwordResult.length === 0){
+    if (passwordResult.length === 0){
       alert("Please select one type of character to generate your password. Refresh the page to try again.")
     }
 
+    //use a for loop to ittirate through the different arrays to generate you password
 
+    // indentifier expected error in code look up identifiers for code to work (problem)
+    //found online: identifier syntax 
+    
+    for (var i = 0; i < passwordLength; i++){
+      var passwordGenerated = passwordResult.charAt(Math.floor(Math.random() * Math.floor(passwordResult.length-1)));
+
+    // get the loop to generate
+      passwordResult += passwordGenerated;
+    }
+
+    return passwordResult;
+
+    //generating password but not to correct length there's a issue im overseeing 
 
 
 
