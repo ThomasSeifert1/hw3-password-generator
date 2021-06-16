@@ -64,6 +64,10 @@ function generatePassword(){
 
     //finished booleans and concatenated themm to passwordResult if i did it correctly which will give you one of the strings if selected and next will be setting if nothing is picked and the random generation
 
+    //alert to say you didnt select any characters or values for your password
+    if(passwordResult.length === 0){
+      alert("Please select one type of character to generate your password. Refresh the page to try again.")
+    }
 
 
 
@@ -82,3 +86,15 @@ function generatePassword(){
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+
+
+///var possibleChoices = ["Rock", "Paper", "Scissors"];
+
+// let randomIndex = Math.floor(Math.random()*possibleChoices.length)
+// var computerChoice = possibleChoices[randomIndex];
